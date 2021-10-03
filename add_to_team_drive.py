@@ -1,9 +1,9 @@
 from __future__ import print_function
 from google.oauth2.service_account import Credentials
-import googleapiclient.discovery, json, progress.bar, glob, sys, argparse, time
+import googleapiclient.discovery, json, progress.bar, glob,  argparse, time
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import os, pickle
+
 
 stt = time.time()
 
@@ -69,7 +69,7 @@ for i in aa:
     pbar.next()
 pbar.finish()
 print('Adding...')
-batch.execute()
+batch.run()
 
 print('Complete.')
 hours, rem = divmod((time.time() - stt), 3600)
